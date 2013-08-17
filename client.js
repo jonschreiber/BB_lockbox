@@ -4,12 +4,13 @@ var _ = require('lodash');
 var dataSource = 'bb_c-max_day_1_part_1';
 
 var io = require('socket.io-client'),
-socket = io.connect('http://playbacktool-pl475c6m.dotcloud.com?sourceID=1&startTime=1375905080&endTime=1375905095&names=windshield_wiper_status,brake_pedal_status,parking_brake_status,headlamp_status,high_beam_status,&format=json&apikey=9BaOZYnbn5', {
+socket = io.connect('http://playbacktool-pl475c6m.dotcloud.com', {
     port: 80
 });
 socket.on('connect', function () { 
     socket.emit('init', '9BaOZYnbn5');
     socket.emit('setDataSource', 'bb_c-max_day_1_part_1');
+    socket.emit('names','windshield_wiper_status,brake_pedal_status,parking_brake_status,headlamp_status,high_beam_status');
 	console.log("socket connected"); 
 });
 
@@ -29,15 +30,10 @@ socket.on('output', function(data){
     //This where the OpenXC data streams in as data.records. 
     // Here's an example usage with jquery
     var content = "";
-    console.log(data.records);
-    /*
-    
-    _.each(data.records, function(i, obj){
-        dataPoints[obj.name] = obj.value;         
+    //console.log(data.records, data.records.name, data.records.value);    
+    _.each(data.records, function(obj){
+        console.log(obj.name, obj.value);
     });
-
-    console.log(content);
-    */
     
 });
 
