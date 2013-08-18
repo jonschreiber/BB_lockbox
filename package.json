@@ -1,0 +1,25 @@
+{
+  "name": "BB_lockbox",
+  "version": "0.0.0",
+  "description": "Acuating a lockbox with Ford OpenXC",
+  "main": "client.js",
+  "dependencies": {
+    "lodash": "~1.3.1",
+    "socket.io": "~0.9.16",
+    "socket.io-client": "~0.9.16",
+    "supervisor": "~0.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschreiber/BB_lockbox.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jonschreiber/BB_lockbox/issues"
+  }
+}
