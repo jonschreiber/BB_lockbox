@@ -48,7 +48,7 @@ app.get('/', function(req, res){
 		lockbox.locked = true;	
 	}
 	*/
-	res.send('<html><body>HELLO lockbox is ' + lockbox.locked + testform + '</body></html>');
+	res.send('<html><body>The lockbox is ' + lockbox.locked ? 'LOCKED' : 'UNLOCKED' + testform + '</body></html>');
 });
 
 app.post('/', function(req, res) {
